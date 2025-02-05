@@ -1,6 +1,8 @@
 import "./App.css";
 
-function App() {
+import OrderDetails from "./components/Order/OrderDetails";
+
+export default function App() {
 
     const items = [
         {
@@ -85,10 +87,13 @@ function App() {
         }
     ];
 
+    const itemsInBag = items.filter(item => item.isInBag);
+    const shopName = "Jersey Shop";
+
     return ( 
         <>
             <section className="items">
-                <h4>Jersey Shop</h4>
+                <h4>{shopName}</h4>
                 
                 {items.map(item =>
                     <div key={item.id} className={`product ${item.isInBag ? "selected" : ""}`}>
@@ -97,7 +102,7 @@ function App() {
                         </div>
                         <div className="description">
                             <span className="name">{item.name}</span>
-                            <span className="price">{item.price}</span>
+                            <span className="price">R$ {item.price}</span>
                             {
                                 item.isInBag &&
                                 <div className="quantity-area">
@@ -111,33 +116,8 @@ function App() {
                 )}
 
             </section>
-            
 
-            <section className="summary">
-                <strong>Order Details</strong>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1x Real Madrid</td>
-                            <td>$ 119.99</td>
-                        </tr>
-                        
-                        <tr>
-                            <th>Total</th>
-                            <th>$ 119.99</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            
+            {itemsInBag.length > 0 && <OrderDetails />}
         </>
     );
 }
-
-export default App
