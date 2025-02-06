@@ -97,7 +97,11 @@ export default function App() {
                 <h4>{shopName}</h4>
                 
                 {items.map(item =>
-                    <Item item={item} key={item.id} />
+                    <Item 
+                        selectProduct={(id) => alert(`Clicked product ${id}`)}
+                        item={item} 
+                        key={item.id} 
+                    />
                 )}
 
             </section>

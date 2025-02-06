@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Item({item}) {
+export default function Item({item, selectProduct}) {
   return (
       <>
-          <div className={`product ${item.isInBag ? "selected" : ""}`}>
+          <div onClick={() => selectProduct(item.id)} className={`product ${item.isInBag ? "selected" : ""}`}>
               <div className="photo">
                   <img src={"./img/" + item.photo} />
               </div>
