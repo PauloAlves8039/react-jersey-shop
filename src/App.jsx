@@ -2,10 +2,12 @@ import "./App.css";
 
 import OrderDetails from "./components/Order/OrderDetails";
 import Item from "./components/Item/Item";
+import { useState } from "react";
 
 export default function App() {
 
-    const items = [
+    const shopName = "Jersey Shop";
+    const [items, setItems ] = useState ([
         {
             id: 1, 
             photo: "real_madrid.webp",
@@ -86,10 +88,15 @@ export default function App() {
             quantity: 1, 
             isInBag: false
         }
-    ];
+    ]);
 
     const itemsInBag = items.filter(item => item.isInBag);
-    const shopName = "Jersey Shop";
+    
+    function selectHandler(id) {
+        let item = items.filter(item => item.id === id)[0];
+        item.isInBag = !true.isInBag;
+        setItems(items.map(el => el.id === id ? item : el));
+    }
 
     return ( 
         <>
@@ -98,7 +105,7 @@ export default function App() {
                 
                 {items.map(item =>
                     <Item 
-                        selectProduct={(id) => alert(`Clicked product ${id}`)}
+                        selectProduct={(id) => selectHandler(id)}
                         item={item} 
                         key={item.id} 
                     />
