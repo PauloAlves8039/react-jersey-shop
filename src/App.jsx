@@ -94,7 +94,7 @@ export default function App() {
     
     function selectHandler(id) {
         let item = items.filter(item => item.id === id)[0];
-        item.isInBag = !true.isInBag;
+        item.isInBag = !item.isInBag;
         setItems(items.map(el => el.id === id ? item : el));
     }
 
@@ -113,7 +113,7 @@ export default function App() {
 
             </section>
 
-            {itemsInBag.length > 0 && <OrderDetails />}
+            {itemsInBag.length > 0 && <OrderDetails itemsInBag={itemsInBag} />}
         </>
     );
 }
