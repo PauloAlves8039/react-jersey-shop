@@ -1,6 +1,6 @@
 
 
-export default function OrderDetails ({itemsInBag}) {
+export default function OrderDetails ({itemsInBag, onCancelOrder}) {
 
     function calculateTotal(){
         let orderTotal = 0;
@@ -33,6 +33,7 @@ export default function OrderDetails ({itemsInBag}) {
                         </tr>
                     </tbody>
                 </table>
+                <button className="cancel-button" onClick={onCancelOrder}>Cancel Order</button>
             </section>
         </div>
     )

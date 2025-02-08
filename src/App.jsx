@@ -106,7 +106,13 @@ export default function App() {
         item.quantity += increment;
         setItems(items.map(el => el.id === id ? item : el));
     }
-    
+
+    function clearOrderHandler() {
+        if (window.confirm("Are you sure you want to cancel the order?")) {
+            setItems(items.map(item => ({ ...item, isInBag: false, quantity: 1 })));
+        }
+    }
+        
     return ( 
         <>
             <section className="items">
@@ -123,7 +129,7 @@ export default function App() {
                 
             </section>
             
-            {itemsInBag.length > 0 && <OrderDetails itemsInBag={itemsInBag} />}
+            {itemsInBag.length > 0 && <OrderDetails itemsInBag={itemsInBag} onCancelOrder={clearOrderHandler} />}
 
         </>   
    

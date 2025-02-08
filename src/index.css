@@ -64,6 +64,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.cancel-button {
+  color: var(--dark-color1);
+  background-color: var(--neutral-color1);
+}
+
+.cancel-button:hover {
+  color: var(--neutral-color1);
+  background-color: var(--dark-color1);
+}
+
 .animation-bounce-in-1s {
   animation: bounceIn;
   animation-duration: 1s;
