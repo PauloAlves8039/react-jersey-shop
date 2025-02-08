@@ -3,6 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --primary-color: #37B3F2;
   --neutral-color1: #FFFFFF;
   --neutral-color2: #F9F9F9;
   --neutral-color3: #FFF;
@@ -16,6 +17,7 @@
   --purple-color2: #535BF2;
   --purple-color3: #747BFF;
   --success-color1: #7CCB8E;
+  --success-color2: #15BE20;
   --danger-color1: rgb(220, 75, 39);
 }
 
@@ -52,12 +54,24 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: var(--purple-color1);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.animation-bounce-in-1s {
+  animation: bounceIn;
+  animation-duration: 1s;
+}
+
+.animation-fade-in-downbig-1s {
+  animation: fadeInDownBig;
+  animation-duration: 1s;
 }
 
 @media (prefers-color-scheme: light) {

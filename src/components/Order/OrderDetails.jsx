@@ -9,12 +9,12 @@ export default function OrderDetails ({itemsInBag}) {
     }
 
     return ( 
-        <>
+        <div className="animation-fade-in-downbig-1s">
             <section className="summary">
-                <strong>Order Summary</strong>
+                <strong className="title-color">Order Summary</strong>
                 <table>
                     <thead>
-                        <tr>
+                        <tr className="subtitle-color">
                             <th>Item</th>
                             <th>Total</th>
                         </tr>
@@ -34,6 +34,6 @@ export default function OrderDetails ({itemsInBag}) {
                     </tbody>
                 </table>
             </section>
-        </>
+        </div>
     )
 }

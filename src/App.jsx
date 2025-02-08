@@ -110,7 +110,7 @@ export default function App() {
     return ( 
         <>
             <section className="items">
-                <h4>{ shopName }</h4>
+                <h4 className="title-color">{ shopName }</h4>
 
                 { items.map(item => 
                     <Item 

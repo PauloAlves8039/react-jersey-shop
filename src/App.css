@@ -122,5 +122,10 @@ section.summary table tbody tr:last-of-type th {
   padding: 10px 0;
 }
 
+.title-color {
+  color: var(--primary-color);
+}
 
-
+.subtitle-color {
+  color: var(--success-color2);
+}
